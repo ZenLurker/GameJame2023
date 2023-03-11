@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: carelage_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1549707310, guid: 2afb95905ee74be4b82e78c7cf3e2c7d, type: 3}
+  m_Sprite: {fileID: 1851526173, guid: 79764fa62b0d38d41bc7f4340748c523, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
