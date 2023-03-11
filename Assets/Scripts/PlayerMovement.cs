@@ -11,10 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D myRigidBody;
     Animator myAnimator;
 
-    
-
     bool canMove = true;
-
 
     void Start()
     {
@@ -70,10 +67,13 @@ public class PlayerMovement : MonoBehaviour
     public void stopMovement()
     {
         canMove = false;
+        
+        myRigidBody.velocity = Vector2.zero;
     }
 
     public void startMovement()
     {
         canMove = true;
     }
+
 }
