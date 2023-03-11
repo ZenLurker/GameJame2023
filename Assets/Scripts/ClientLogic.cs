@@ -10,15 +10,13 @@ public class ClientLogic: MonoBehaviour
     [SerializeField] int command_level;
     private Command command;
 
-   
+    bool isHappy;
 
 
     // Start is called before the first frame update
     void Start()
     {
-      
         command = new Command(command_level);
-
     }
 
     // Update is called once per frame
@@ -31,7 +29,9 @@ public class ClientLogic: MonoBehaviour
         return command;
     }
 
-
+    public void IsHappy(bool status){
+        isHappy = status;
+    }
     
 
     
