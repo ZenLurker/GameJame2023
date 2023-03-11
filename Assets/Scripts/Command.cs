@@ -15,6 +15,10 @@ public class Command
         }
     }
 
+    public Command(){
+        
+    }
+
     public void printCommand()
     {
         foreach (Coffee coffee in coffees)
