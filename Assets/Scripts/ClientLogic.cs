@@ -33,6 +33,4 @@ public class ClientLogic: MonoBehaviour
         isHappy = status;
     }
     
-
-    
 }
