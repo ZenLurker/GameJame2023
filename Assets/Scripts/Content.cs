@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scriptstest : MonoBehaviour
+public class Content : MonoBehaviour
 {
+
+    private int sugar, cream;
     // Start is called before the first frame update
     void Start()
     {
