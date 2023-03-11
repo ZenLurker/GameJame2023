@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 moveInput;
     Rigidbody2D myRigidBody;
+    Animator myAnimator;
 
     
 
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     
@@ -39,6 +41,17 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, moveInput.y * runSpeed);
             myRigidBody.velocity = playerVelocity;
+
+            bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
+            bool playerVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
+
+            if(playerHasHorizontalSpeed || playerVerticalSpeed){
+                myAnimator.SetBool("isRunning", true);
+            }
+            else{
+                myAnimator.SetBool("isRunning", false);
+            }
+            
         }
         
     }
@@ -47,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(myRigidBody.velocity.x < 0){
             transform.localScale = new Vector3(-1, 1, 1);
+            
         }
         else if(myRigidBody.velocity.x > 0){
             transform.localScale = new Vector3(1, 1, 1);
