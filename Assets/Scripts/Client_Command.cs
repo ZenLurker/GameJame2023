@@ -33,15 +33,26 @@ public class Client_Command : MonoBehaviour
 
 
     private class Coffee {
-        private int sugar, cream;
+        private int sugar = 0, cream = 0, espresso = 0, alcohol = 0;
+        private Boolean punched = false, iced = false;
         public Coffee(int level) {
-            if(level <= 0) {
-                sugar = 0;
-                cream = 0;
-            } else {
-                sugar = UnityEngine.Random.Range(0,Math.Min(level, 4));
-                cream = UnityEngine.Random.Range(0,Math.Min(level, 4));
+            
+            if(level > 1) {
+                punched = (UnityEngine.Random.Range(0,2) == 1);
             }
+            if(!punched && level > 2) {
+                iced = (UnityEngine.Random.Range(0,2) == 1);
+            }
+            if(level > 3) {
+                espresso = UnityEngine.Random.Range(0,Math.Min(level, 3));
+            }
+            if(level > 4) {
+                alcohol = UnityEngine.Random.Range(0,Math.Min(level, 3));
+            }
+            sugar = UnityEngine.Random.Range(0,Math.Min(level, 5));
+            cream = UnityEngine.Random.Range(0,Math.Min(level, 5));
+            
+            
         }
 
         public int getCreams() {
@@ -49,6 +60,18 @@ public class Client_Command : MonoBehaviour
         }
         public int getSugars() {
             return sugar;
+        }
+        public int getEspresso() {
+            return espresso;
+        }
+        public int getAlcohol() {
+            return alcohol;
+        }
+        public Boolean getPunched() {
+            return punched;
+        }
+        public Boolean getIced() {
+            return iced;
         }
     }
 
