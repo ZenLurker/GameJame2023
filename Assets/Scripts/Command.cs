@@ -23,9 +23,29 @@ public class Command
         }
     }
 
+    public override bool Equals(object other) {
+        if(!(other is Command)) {
+            return false;
+        }
+        Command other_command = other as Command;
+        if(coffees.Count != other_command.coffees.Count) {
+            return false;
+        }
+        for(int i = 0; i < coffees.Count; i++) {
+            if(!coffees[i].Equals(other_command.getCoffee(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public ArrayList getCoffees()
     {
         return coffees;
+    }
+
+    private Coffee getCoffee(int index) {
+        return (Coffee) coffees[index];
     }
     private class Coffee
     {
@@ -55,6 +75,29 @@ public class Command
 
 
         }
+
+        public override bool Equals(object other) {
+            if(!(other is Coffee)) {
+                return false;
+            }
+            Coffee other_coffee = other as Coffee;
+            if(cream != other_coffee.getCreams()) {
+                return false;
+            } else if(sugar != other_coffee.getSugars()) {
+                return false;
+            } else if(espresso != other_coffee.getEspresso()) {
+                return false;
+            } else if(alcohol != other_coffee.getAlcohol()) {
+                return false;
+            } else if(punched != other_coffee.getPunched()) {
+                return false;
+            } else if(iced != other_coffee.getIced()) {
+                return false;
+            }
+            return true;
+        }
+
+        
 
         public int getCreams()
         {

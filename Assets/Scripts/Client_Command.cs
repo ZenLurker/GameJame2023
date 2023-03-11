@@ -17,9 +17,8 @@ public class Client_Command : MonoBehaviour
         Debug.Log("Cafe 1:");
         command.printCommand();
 
-        command = new Command(2);
-        Debug.Log("Cafe 2:");
-        command.printCommand();
+        Command second_one = command;
+        Debug.Log(second_one.Equals(command));
     }
 
     // Update is called once per frame
@@ -32,8 +31,6 @@ public class Client_Command : MonoBehaviour
         return command;
     }
 
-
-    
 
     
 }
