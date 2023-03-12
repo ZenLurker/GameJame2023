@@ -57,7 +57,7 @@ public class UI : MonoBehaviour
         punchedCount.text = "Punched: " + command.getCoffee(player.getCurrentCoffee()).getPunched();
         energyShotsCount.text = "Energy Level: " + command.getCoffee(player.getCurrentCoffee()).getEspresso();
         alcoholCount.text = "Alcohol: " + command.getCoffee(player.getCurrentCoffee()).getAlcohol();
-        //scoreCount()
+        scoreCount.text = player.getScore().ToString();
 
 
     }

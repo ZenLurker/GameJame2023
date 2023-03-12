@@ -168,11 +168,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140625912}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 5111803692da3e444bf3666dc12fda65, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 82dc3a2de93294b4d8251307e562270a, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: c882037b8e772c54bbcd1401f358117a, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 801adc789e7ba3249b8f3ed928e36b06, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 229846466}
   - component: {fileID: 229846465}
   - component: {fileID: 229846464}
-  - component: {fileID: 229846467}
   m_Layer: 5
   m_Name: Button_Quit
   m_TagString: Untagged
@@ -263,8 +262,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: afef086d5eeed2749a7667f6a604cf16, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 5997b615cab19dd4ba4851bc179c52c3, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: fddfbb9cbd6aca54384c41257c581928, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c8de60d6528b34e44bae14d88ba0a73f, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -322,7 +321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd4f008f8365a8a4c8c7ae7b40af5268, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 032ee4b6664922d4787bf10d52d50893, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -340,102 +339,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229846462}
   m_CullTransparentMesh: 1
---- !u!82 &229846467
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229846462}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ff50ee84e0ac4a64b9de21b6c7c67bec, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &432449404
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: c882037b8e772c54bbcd1401f358117a, type: 2}
+  m_Texture: {fileID: 8400000, guid: 801adc789e7ba3249b8f3ed928e36b06, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -683,8 +586,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 09d78cc7cac363041abb3b167d33c37f, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 40ebd010cc82f36448f66ab1749c996a, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 3ad52cb7a8d4dec469064177cc1f658b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: eeee0084f032dd445b9448005e669982, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -742,7 +645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be82e8d42d1e8e44c901c014b788601f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 394fa84bf39c9524fac1d80e59803f4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1005,7 +908,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1252165115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d33274ad212b944bba9cbf289743646, type: 3}
+  m_Script: {fileID: 11500000, guid: f9988d1db8570a249b27e409590f51a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1974021071}
@@ -1203,7 +1106,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ff50ee84e0ac4a64b9de21b6c7c67bec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 37697c2c9a0e5c24f91badd2c2e7370b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1328,11 +1231,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d9ef1e1626cf6d24c854136a60360921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 69bb90a19c13a2d4889985a05ba327f8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1487,7 +1390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2ff9dc97086248744854881e58eca840, type: 3}
+  m_Texture: {fileID: 2800000, guid: d45648f211f28fe4baba9d75eddef61a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
