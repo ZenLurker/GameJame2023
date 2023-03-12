@@ -119,7 +119,7 @@ public class PlayerCommand : MonoBehaviour
         }
 
         //Garbage Collector (Mathieu Paquette)
-        if(other.gameObject.CompareTag("MathieuPaquette")){
+        if(other.gameObject.CompareTag("MathieuPaquette") && hasCommand){
             currentCoffee = null;
         }
 
@@ -191,7 +191,7 @@ public class PlayerCommand : MonoBehaviour
     {
         if(moon_Animator.getTimer() <= 0)
         {
-            SceneManager.LoadScene("Death_scene");
+            SceneManager.LoadScene("Death_scenne");
         }
     }
 }

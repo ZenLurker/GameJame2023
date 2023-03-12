@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -104.75, y: 0}
-  m_SizeDelta: {x: 209.4926, y: 189.2786}
+  m_AnchoredPosition: {x: -301.42004, y: 0}
+  m_SizeDelta: {x: 602.84, y: 544.6687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &705995825
 MonoBehaviour:
@@ -174,14 +174,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 0.28235295}
+  m_Color: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 0.24313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c36b88bca561a684f85a2d8fa840a8be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85f9bfa9444e6b0468061361cbb2205a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1722874237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71cbca38af72ef24e9edda91a4afd410, type: 3}
+  m_Script: {fileID: 11500000, guid: 964d6d5283d8cd847b4b96afcc48a161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1878976260
@@ -570,7 +570,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 878616907565fb5468f12827999b2e08, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cc4c7a65f409994dbd0413e23a9f5cb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -706,8 +706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2000122, y: 0.5}
-  m_SizeDelta: {x: 436.3037, y: 373.54004}
+  m_AnchoredPosition: {x: -208, y: 0.000005722}
+  m_SizeDelta: {x: 1179.0121, y: 1009.415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939082169
 MonoBehaviour:
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 675ef4ef30d09ca4090ea1758e7d00c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6eaad43d0a0747f44b715634cbe2ef9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
