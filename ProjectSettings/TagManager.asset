@@ -8,7 +8,11 @@ TagManager:
   - CoffeeStation
   - SugarStation
   - CreamStation
-  - CoffeeMachine
+  - IcedStation
+  - PunchedStation
+  - AlcoholStation
+  - EnergyStation
+  - MathieuPaquette
   layers:
   - Default
   - TransparentFX
@@ -45,4 +49,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 917621237
+    locked: 0
+  - name: Objects
+    uniqueID: 2138817331
+    locked: 0
+  - name: Wall
+    uniqueID: 1571279399
+    locked: 0
+  - name: Player
+    uniqueID: 1622619103
+    locked: 0
+  - name: PopUps
+    uniqueID: 419070691
     locked: 0

@@ -61,14 +61,17 @@ public class Command
 
     public Coffee getCoffee(int index)
     {
+        Debug.Log(index);
         return (Coffee)coffees[index];
     }
 
+    //Desuet
+    /*
     public void addCoffee()
     {
         coffees.Add(new Coffee());
     }
-
+    
     public void addSugar(int i)
     {
         ((Coffee)coffees[i]).addSugar();
@@ -81,9 +84,6 @@ public class Command
 
     public void addAlcohol(int i)
     {
-        ((Coffee)coffees[i]).addAlcohol();
-    }
-
     public void addEspresso(int i)
     {
         ((Coffee)coffees[i]).addEspresso();
@@ -98,141 +98,147 @@ public class Command
     {
         ((Coffee)coffees[i]).addIced();
     }
-
-    public class Coffee
-    {
-        private int sugar = 0, cream = 0, espresso = 0, alcohol = 0;
-        private bool punched = false, iced = false;
-        public Coffee(int level)
-        {
-
-            if (level > 1)
-            {
-                punched = (UnityEngine.Random.Range(0, 2) == 1);
-            }
-            if (!punched && level > 2)
-            {
-                iced = (UnityEngine.Random.Range(0, 2) == 1);
-            }
-            if (level > 3)
-            {
-                espresso = UnityEngine.Random.Range(0, Math.Min(level, 3));
-            }
-            if (level > 4)
-            {
-                alcohol = UnityEngine.Random.Range(0, Math.Min(level, 3));
-            }
-            sugar = UnityEngine.Random.Range(0, Math.Min(level, 5));
-            cream = UnityEngine.Random.Range(0, Math.Min(level, 5));
-
-
-        }
-        public Coffee() { }
-
-
-
-        public override bool Equals(object other)
-        {
-            if (!(other is Coffee))
-            {
-                return false;
-            }
-            Coffee other_coffee = other as Coffee;
-            if (cream != other_coffee.getCreams())
-            {
-                return false;
-            }
-            else if (sugar != other_coffee.getSugars())
-            {
-                return false;
-            }
-            else if (espresso != other_coffee.getEspresso())
-            {
-                return false;
-            }
-            else if (alcohol != other_coffee.getAlcohol())
-            {
-                return false;
-            }
-            else if (punched != other_coffee.getPunched())
-            {
-                return false;
-            }
-            else if (iced != other_coffee.getIced())
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public int getCreams()
-        {
-            return cream;
-        }
-        public int getSugars()
-        {
-            return sugar;
-        }
-        public int getEspresso()
-        {
-            return espresso;
-        }
-        public int getAlcohol()
-        {
-            return alcohol;
-        }
-        public bool getPunched()
-        {
-            return punched;
-        }
-        public bool getIced()
-        {
-            return iced;
-        }
-
-        public void addCream()
-        {
-            if (cream < 4)
-            {
-                cream++;
-            }
-
-        }
-        public void addSugar()
-        {
-            if (sugar < 4)
-            {
-                sugar++;
-            }
-        }
-        public void addEspresso()
-        {
-            if (espresso < 2)
-            {
-                espresso++;
-            }
-        }
-        public void addAlcohol()
-        {
-            if (alcohol < 2)
-            {
-                alcohol++;
-            }
-        }
-        public void addPunched()
-        {
-            if (!punched)
-            {
-                punched = !punched;
-            }
-        }
-        public void addIced()
-        {
-            if (!iced)
-            {
-                iced = !iced;
-            }
-        }
+        ((Coffee)coffees[i]).addAlcohol();
     }
+    */
 
 }
+
+
+public class Coffee
+{
+    private int sugar = 0, cream = 0, espresso = 0, alcohol = 0;
+    private bool punched = false, iced = false;
+    public Coffee(int level)
+    {
+
+        if (level > 1)
+        {
+            punched = (UnityEngine.Random.Range(0, 2) == 1);
+        }
+        if (!punched && level > 2)
+        {
+            iced = (UnityEngine.Random.Range(0, 2) == 1);
+        }
+        if (level > 3)
+        {
+            espresso = UnityEngine.Random.Range(0, Math.Min(level, 3));
+        }
+        if (level > 4)
+        {
+            alcohol = UnityEngine.Random.Range(0, Math.Min(level, 3));
+        }
+        sugar = UnityEngine.Random.Range(0, Math.Min(level, 5));
+        cream = UnityEngine.Random.Range(0, Math.Min(level, 5));
+
+
+    }
+    public Coffee() { }
+
+
+
+    public override bool Equals(object other)
+    {
+        if (!(other is Coffee))
+        {
+            return false;
+        }
+        Coffee other_coffee = other as Coffee;
+        if (cream != other_coffee.getCreams())
+        {
+            return false;
+        }
+        else if (sugar != other_coffee.getSugars())
+        {
+            return false;
+        }
+        else if (espresso != other_coffee.getEspresso())
+        {
+            return false;
+        }
+        else if (alcohol != other_coffee.getAlcohol())
+        {
+            return false;
+        }
+        else if (punched != other_coffee.getPunched())
+        {
+            return false;
+        }
+        else if (iced != other_coffee.getIced())
+        {
+            return false;
+        }
+        return true;
+    }
+
+    public int getCreams()
+    {
+        return cream;
+    }
+    public int getSugars()
+    {
+        return sugar;
+    }
+    public int getEspresso()
+    {
+        return espresso;
+    }
+    public int getAlcohol()
+    {
+        return alcohol;
+    }
+    public bool getPunched()
+    {
+        return punched;
+    }
+    public bool getIced()
+    {
+        return iced;
+    }
+
+    public void addCream()
+    {
+        if (cream < 4)
+        {
+            cream++;
+        }
+
+    }
+    public void addSugar()
+    {
+        if (sugar < 4)
+        {
+            sugar++;
+        }
+    }
+    public void addEspresso()
+    {
+        if (espresso < 2)
+        {
+            espresso++;
+        }
+    }
+    public void addAlcohol()
+    {
+        if (alcohol < 2)
+        {
+            alcohol++;
+        }
+    }
+    public void addPunched()
+    {
+        if (!punched)
+        {
+            punched = !punched;
+        }
+    }
+    public void addIced()
+    {
+        if (!iced)
+        {
+            iced = !iced;
+        }
+    }
+}
+
+

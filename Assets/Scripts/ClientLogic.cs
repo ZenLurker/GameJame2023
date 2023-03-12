@@ -17,6 +17,7 @@ public class ClientLogic: MonoBehaviour
     void Start()
     {
         command = new Command(command_level);
+        command.printCommand();
     }
 
     // Update is called once per frame
