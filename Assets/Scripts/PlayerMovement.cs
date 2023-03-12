@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D myRigidBody;
     Animator myAnimator;
 
-    bool canMove = true;
+    public bool canMove = true;
 
     void Start()
     {

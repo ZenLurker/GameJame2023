@@ -7,21 +7,21 @@ public class PlayerCommand : MonoBehaviour
 {
 
     [SerializeField] ClientLogic client;
-    private Command commandClient;
-    private Command fulfillmentCommand;
-    private int currentCovfefe;
-    private PlayerMovement playerMovement;
-    bool hasCommand = false;
-    bool commandIsComplete = false;
 
-    // Start is called before the first frame update
+    private Command commandClient;
+    private Coffee currentCoffee;
+    private int coffeeIndex = 0;
+    private PlayerMovement playerMovement;
+    private bool hasCommand = false;
+    private bool commandIsComplete = false;
+
+
     void Start()
     {
-        fulfillmentCommand = new Command();
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (hasCommand)
@@ -38,18 +38,20 @@ public class PlayerCommand : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.CompareTag("Client") && !hasCommand)
         {
+            Debug.Log("Command acquired");
             commandClient = client.getCommand();
-            currentCovfefe = 0;
             hasCommand = true;
+
         }
 
         if (other.gameObject.CompareTag("Client") && commandIsComplete && hasCommand)
         {
             client.IsHappy(true);
             hasCommand = false;
-            fulfillmentCommand = null;
+
         }
 
         if (other.gameObject.CompareTag("Client") && !commandIsComplete && hasCommand)
@@ -59,72 +61,83 @@ public class PlayerCommand : MonoBehaviour
 
         if (other.gameObject.CompareTag("CoffeeStation") && hasCommand && !commandIsComplete)
         {
-            StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addCoffee();
+            if (playerMovement.canMove)
+            {
+                StartCoroutine("waitBeforeMove");
+                currentCoffee = new Coffee();
+            }
+
 
         }
 
         if (other.gameObject.CompareTag("SugarStation") && hasCommand && !commandIsComplete)
         {
             StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addSugar(currentCovfefe);
+            currentCoffee.addSugar();
 
         }
 
         if (other.gameObject.CompareTag("CreamStation") && hasCommand && !commandIsComplete)
         {
             StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addCream(currentCovfefe);
+            currentCoffee.addCream();
 
         }
 
         if (other.gameObject.CompareTag("AlcoholStation") && hasCommand && !commandIsComplete)
         {
             StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addAlcohol(currentCovfefe);
+            currentCoffee.addAlcohol();
 
         }
 
-        if (other.gameObject.CompareTag("EspressoStation") && hasCommand && !commandIsComplete)
+        if (other.gameObject.CompareTag("EnergyStation") && hasCommand && !commandIsComplete)
         {
             StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addEspresso(currentCovfefe);
+            currentCoffee.addEspresso();
 
         }
 
         if (other.gameObject.CompareTag("PunchedStation") && hasCommand && !commandIsComplete)
         {
             StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addPunched(currentCovfefe);
+            currentCoffee.addPunched();
 
         }
 
         if (other.gameObject.CompareTag("IcedStation") && hasCommand && !commandIsComplete)
         {
             StartCoroutine("waitBeforeMove");
-            fulfillmentCommand.addIced(currentCovfefe);
+            currentCoffee.addIced();
 
+        }
+
+        //Garbage Collector (Mathieu Paquette)
+        if(other.gameObject.CompareTag("MathieuPaquette")){
+            currentCoffee = null;
         }
 
     }
 
     private void checkCommandStatus()
     {
-        if (fulfillmentCommand.getCoffees().Count != 0)
+
+        if (currentCoffee != null && currentCoffee.Equals(commandClient.getCoffee(coffeeIndex)))
         {
-            if (fulfillmentCommand.getCoffee(currentCovfefe).Equals(commandClient.getCoffee(currentCovfefe)))
+            coffeeCompleted();
+            if (commandClient.getCoffees().Count > coffeeIndex + 1)
             {
-
-                currentCovfefe++;
-
+                coffeeIndex++;
             }
-
-            if (currentCovfefe == commandClient.getCoffees().Count)
-            {
-                commandIsComplete = true;
-            }
+            else commandIsComplete = true;
         }
 
+    }
+
+
+    private void coffeeCompleted()
+    {
+        currentCoffee = null;
     }
 
     private IEnumerator waitBeforeMove()

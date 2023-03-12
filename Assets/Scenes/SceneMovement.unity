@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 12080316}
   m_Layer: 0
   m_Name: CoffeeMachine
-  m_TagString: CoffeeMachine
+  m_TagString: CoffeeStation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
