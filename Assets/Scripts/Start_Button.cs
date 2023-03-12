@@ -13,15 +13,19 @@ public class Start_Button : MonoBehaviour
 
     IEnumerator waiter()
     {
-        //Wait for 4 seconds
-        yield return new WaitForSeconds(100);
+        Debug.Log("Attend");
+        //Wait for 10 seconds
+        yield return new WaitForSeconds(5);
+        Debug.Log("Fini");
+
     }
 
 
     public AudioSource audio;
     public AudioSource audio2;
+
+
     public void scene_changer_level1(){
-        waiter();
         SceneManager.LoadScene("MoonAnimation");
     }
 
