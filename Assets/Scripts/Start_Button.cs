@@ -26,7 +26,7 @@ public class Start_Button : MonoBehaviour
 
 
     public void scene_changer_level1(){
-        SceneManager.LoadScene("MoonAnimation");
+        SceneManager.LoadScene("CoffeeShopScene");
     }
 
     public void QuitGame(){
