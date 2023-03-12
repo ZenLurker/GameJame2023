@@ -14,7 +14,7 @@ public class ClientLogic: MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         command = new Command(command_level);
         command.printCommand();

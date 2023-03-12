@@ -8,7 +8,7 @@ public class Command
     private ArrayList coffees = new ArrayList();
     public Command(int level)
     {
-        int coffee_amount = UnityEngine.Random.Range(1, level + 1);
+        int coffee_amount = UnityEngine.Random.Range(1, level + 2);
         for (int i = 0; i < coffee_amount; i++)
         {
             coffees.Add(new Coffee(level));
@@ -54,9 +54,9 @@ public class Command
         return true;
     }
 
-    public ArrayList getCoffees()
+    public int getCoffeesCount()
     {
-        return coffees;
+        return coffees.Count;
     }
 
     public Coffee getCoffee(int index)
