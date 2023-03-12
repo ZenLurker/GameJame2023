@@ -125,7 +125,7 @@ public class PlayerCommand : MonoBehaviour
         if (currentCoffee != null && currentCoffee.Equals(commandClient.getCoffee(coffeeIndex)))
         {
             coffeeCompleted();
-            if (commandClient.getCoffees().Count > coffeeIndex + 1)
+            if (commandClient.getCoffeesCount() > coffeeIndex + 1)
             {
                 coffeeIndex++;
             }
@@ -140,11 +140,26 @@ public class PlayerCommand : MonoBehaviour
         currentCoffee = null;
     }
 
+    public bool getIsCommandCompleted()
+    {
+        return commandIsComplete;
+    }
+
+     public bool getHasCommand()
+    {
+        return hasCommand;
+    }
+
     private IEnumerator waitBeforeMove()
     {
         playerMovement.stopMovement();
         yield return new WaitForSeconds(2);
         playerMovement.startMovement();
+    }
+
+
+    public int getCurrentCoffee(){
+        return coffeeIndex;
     }
 
 
