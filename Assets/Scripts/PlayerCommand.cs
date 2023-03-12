@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerCommand : MonoBehaviour
 {
 
     [SerializeField] ClientLogic client;
+    [SerializeField] Moon_animator moon_Animator;
 
     private Command commandClient;
     private Coffee currentCoffee;
@@ -14,6 +16,9 @@ public class PlayerCommand : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool hasCommand = false;
     private bool commandIsComplete = false;
+
+    private int score = 0;
+
 
 
     void Start()
@@ -24,16 +29,17 @@ public class PlayerCommand : MonoBehaviour
 
     void Update()
     {
+        checkFailCondition();
+
         if (hasCommand)
         {
             checkCommandStatus();
-            //if(playerMovement.OnSpacePress()){
-
-            //}
+            
             commandClient.printCommand();
         }
 
-
+        checkWinCondition();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -162,5 +168,30 @@ public class PlayerCommand : MonoBehaviour
         return coffeeIndex;
     }
 
+    public int getScore(){
+        return score;
+    }
 
+    public void incrementScore(){
+        score++;
+    }
+
+    private void checkWinCondition()
+    {
+        if(client.getIsHappy())
+        {
+            client.IsHappy(false);
+            incrementScore();
+            moon_Animator.reduceTimer(15);
+            SceneManager.LoadScene("Win_scene");
+        }
+    }
+
+    private void checkFailCondition()
+    {
+        if(moon_Animator.getTimer() <= 0)
+        {
+            SceneManager.LoadScene("Death_scene");
+        }
+    }
 }

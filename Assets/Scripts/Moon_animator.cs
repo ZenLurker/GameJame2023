@@ -27,12 +27,13 @@ public class Moon_animator : MonoBehaviour
     [SerializeField] Sprite moon_hour11;
     [SerializeField] Sprite moon_hour12;
 
-    [SerializeField] float timer=0f;
+    public float timer = 15f;
+    private float originalTimer;
     // Start is called before the first frame update
     void Start()
     {
         spriterenderer = GetComponent<SpriteRenderer>();
-
+        originalTimer = timer;
 
     }
 
@@ -40,73 +41,83 @@ public class Moon_animator : MonoBehaviour
     void Update()
     {
         UpdateTimer();
-        if(timer <= 15f){
+        if(timer >= originalTimer * 20/21){
             spriterenderer.sprite = moon_0;
         }
-        if(timer>=15f && timer<= 30f){
+        else if(timer>=originalTimer *19/21){
             spriterenderer.sprite = moon_1;
         }
-        if(timer>=30f && timer<= 45f){
+        else if(timer>=originalTimer *18/21){
             spriterenderer.sprite = moon_2;
         }
-        if(timer>=45f && timer<= 60f){
+        else if(timer>=originalTimer *17/21){
             spriterenderer.sprite = moon_3;
         }
-        if(timer>=60f && timer<= 75f){
+        else if(timer>=originalTimer *16/21){
             spriterenderer.sprite = moon_4;
         }
-        if(timer>=75f && timer<= 90f){
+        else if(timer>=originalTimer *15/21){
             spriterenderer.sprite = moon_6;
         }
-        if(timer>=90f && timer<= 105f){
+        else if(timer>=originalTimer *14/21){
             spriterenderer.sprite = moon_7;
         }
-        if(timer>=105f && timer<= 120f){
+        else if(timer>=originalTimer *13/21){
             spriterenderer.sprite = moon_8;
         }
-        if(timer>=120f && timer<= 125f){
+        else if(timer>=originalTimer *12/21){
             spriterenderer.sprite = moon_hour12;
         }
-        if(timer>=125f && timer<= 130f){
+        else if(timer>=originalTimer *11/21){
             spriterenderer.sprite = moon_hour1;
         }
-        if(timer>=130f && timer<= 135f){
+        else if(timer>=originalTimer *10/21){
             spriterenderer.sprite = moon_hour2;
         }
-        if(timer>=135f && timer<= 140f){
+        else if(timer>=originalTimer *9/21){
             spriterenderer.sprite = moon_hour3;
         }
-        if(timer>=140f && timer<= 145f){
+        else if(timer>=originalTimer *8/21){
             spriterenderer.sprite = moon_hour4;
         }
-        if(timer>=145f && timer<= 150f){
+        else if(timer>=originalTimer *7/21){
             spriterenderer.sprite = moon_hour5;
         }
-        if(timer>=150f && timer<= 155f){
+        else if(timer>=originalTimer *6/21){
             spriterenderer.sprite = moon_hour6;
         }
-        if(timer>=155f && timer<= 160f){
+        else if(timer>=originalTimer *5/21){
             spriterenderer.sprite = moon_hour7;
         }
-        if(timer>=160f && timer<= 165f){
+        else if(timer>=originalTimer *4/21){
             spriterenderer.sprite = moon_hour8;
         }
-        if(timer>=165f && timer<= 170f){
+        else if(timer>=originalTimer *3/21){
             spriterenderer.sprite = moon_hour9;
         }
-        if(timer>=170f && timer<= 175f){
+        else if(timer>=originalTimer *2/21){
             spriterenderer.sprite = moon_hour10;
         }
-        if(timer>=175f && timer<= 180f){
+        else if(timer>=originalTimer *1/21){
             spriterenderer.sprite = moon_hour11;
         }
-        if(timer>=180f && timer<= 185f){
+        else{
             spriterenderer.sprite = moon_hour12;
         }
     }
 
     void UpdateTimer()
     {
-        timer+=Time.deltaTime;
+        timer-=Time.deltaTime;
+    }
+
+    public float getTimer()
+    {
+        return timer;
+    }
+
+    public void reduceTimer(float reduceAmount)
+    {
+        timer -= reduceAmount;
     }
 }

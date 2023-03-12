@@ -7,7 +7,8 @@ using UnityEngine;
 public class ClientLogic: MonoBehaviour
 {
 
-    [SerializeField] int command_level;
+    [SerializeField] PlayerCommand player;
+    private int command_level = 0;
     private Command command;
 
     bool isHappy;
@@ -16,6 +17,7 @@ public class ClientLogic: MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        command_level = player.getScore();
         command = new Command(command_level);
         command.printCommand();
     }
@@ -23,7 +25,7 @@ public class ClientLogic: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //command_level = player.getScore();
     }
 
     public Command getCommand() {
@@ -34,6 +36,9 @@ public class ClientLogic: MonoBehaviour
         isHappy = status;
     }
     
-
+    public bool getIsHappy()
+    {
+        return isHappy;
+    }
     
 }
