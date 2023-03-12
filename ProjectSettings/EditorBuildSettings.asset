@@ -20,5 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneMovement.unity
     guid: cd58d5602df223f48b7c7281c8853c9b
+  - enabled: 1
+    path: Assets/Scenes/Death_scenne.unity
+    guid: a52611112578d0b41aded85fba3dc23d
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: f12c882b034ca064fa22a1307d3a26e1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 31004033381203a429f8c12ebddf44fc, type: 2}
