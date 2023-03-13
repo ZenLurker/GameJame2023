@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 359c2b2dae3c47a4baf8c8ea589545b2, type: 2}
+  m_Texture: {fileID: 8400000, guid: 5b817ff98374498449e7d37bc5c6a95a, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -223,11 +223,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2d59edb214b4748489aaad712254e5f4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 48168178549beac4ea452d5992195d03, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 307860355}
   - component: {fileID: 307860354}
   - component: {fileID: 307860353}
+  - component: {fileID: 307860356}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -408,6 +409,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307860356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307860352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09998496a93977e4b8b0e0f3026bbc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276542073
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,11 +534,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513529181}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 92d66aab4f342bc41b86dc5d0d4b2fa8, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c00e028c1d6cdcd47bf6e04766846434, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 359c2b2dae3c47a4baf8c8ea589545b2, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 5b817ff98374498449e7d37bc5c6a95a, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>

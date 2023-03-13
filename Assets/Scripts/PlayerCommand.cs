@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+
+
 public class PlayerCommand : MonoBehaviour
 {
 
     [SerializeField] ClientLogic client;
     [SerializeField] Moon_animator moon_Animator;
+    AudioSource priseDeCommande;
+   
 
     private Command commandClient;
     private Coffee currentCoffee;
@@ -17,12 +21,18 @@ public class PlayerCommand : MonoBehaviour
     private bool hasCommand = false;
     private bool commandIsComplete = false;
 
-    private int score = 0;
+    private int score;
 
 
 
     void Start()
     {
+        
+        score = PlayerPrefs.GetInt("score",0);
+        PlayerPrefs.Save();
+        
+        PlayerPrefs.SetInt("score", score);
+
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -48,7 +58,7 @@ public class PlayerCommand : MonoBehaviour
         if (other.gameObject.CompareTag("Client") && !hasCommand)
         {
             Debug.Log("Command acquired");
-            commandClient = client.getCommand();
+            commandClient = client.getCommand(score);
             hasCommand = true;
 
         }
@@ -169,7 +179,7 @@ public class PlayerCommand : MonoBehaviour
     }
 
     public int getScore(){
-        return score;
+        return PlayerPrefs.GetInt("score");
     }
 
     public void incrementScore(){

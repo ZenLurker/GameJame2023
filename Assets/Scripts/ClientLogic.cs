@@ -32,6 +32,11 @@ public class ClientLogic: MonoBehaviour
         return command;
     }
 
+    public Command getCommand(int score) {
+        return new Command(score);
+    }
+
+
     public void IsHappy(bool status){
         isHappy = status;
     }

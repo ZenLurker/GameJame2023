@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Start_Button : MonoBehaviour
 {
 
+    
+
     void Start()
     {
         StartCoroutine(waiter());
@@ -26,6 +28,7 @@ public class Start_Button : MonoBehaviour
 
 
     public void scene_changer_level1(){
+        PlayerPrefs.SetInt("score", 0);
         SceneManager.LoadScene("CoffeeShopScene");
     }
 

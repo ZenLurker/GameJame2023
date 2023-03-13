@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6561016181186796299}
-  - component: {fileID: 6561016181186796298}
   - component: {fileID: 6561016181186796297}
+  - component: {fileID: 7104536923907377202}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -33,39 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6561016181186796298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6561016181186796310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191ff90cbe3cc5a478169dcb1075e695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moon_0: {fileID: 21300000, guid: 6fdba47f0a553ed428ad86013d121d34, type: 3}
-  moon_1: {fileID: 21300000, guid: 8cd962c0d3fae764da60f06b47d29bb1, type: 3}
-  moon_2: {fileID: 21300000, guid: dee955d6dbb164f459173e784b3b0637, type: 3}
-  moon_3: {fileID: 21300000, guid: 368a5a7e27c3c7a4a87359b4c74bf9c8, type: 3}
-  moon_4: {fileID: 21300000, guid: 5fc75aee5b05e4243b131a97b86b39e0, type: 3}
-  moon_6: {fileID: 21300000, guid: f71f7da625e51b0488c4fe46e3e5f196, type: 3}
-  moon_7: {fileID: 21300000, guid: 60598b7c88d3bf04787dc190ee1a0ef9, type: 3}
-  moon_8: {fileID: 21300000, guid: 65b5c4450f3fd5b4889cc95cc9e1d826, type: 3}
-  moon_hour1: {fileID: 21300000, guid: dde5d751f37b1ee47a986d17d4e08611, type: 3}
-  moon_hour2: {fileID: 21300000, guid: a3661db3e078a524ca6293970686bdca, type: 3}
-  moon_hour3: {fileID: 21300000, guid: d7432bb2c20f3ca4c8743cfc0019000e, type: 3}
-  moon_hour4: {fileID: 21300000, guid: c3860dee53cf481468e1f91c3b22bbef, type: 3}
-  moon_hour5: {fileID: 21300000, guid: 38c4f06370de7cb4486f4c16864086b8, type: 3}
-  moon_hour6: {fileID: 21300000, guid: 225e000b548a1d54a91e151a0222f628, type: 3}
-  moon_hour7: {fileID: 21300000, guid: c1ed19a4a3c24874f81ba7a4beff94f6, type: 3}
-  moon_hour8: {fileID: 21300000, guid: 38dc323adb3ab394c87f7f0327be4e53, type: 3}
-  moon_hour9: {fileID: 21300000, guid: ba7be98862a949542b5961181d7a6e28, type: 3}
-  moon_hour10: {fileID: 21300000, guid: 3e17d31c27b22c2428fcde015d9b7c91, type: 3}
-  moon_hour11: {fileID: 21300000, guid: e77602163161da24093aafe6562bec60, type: 3}
-  moon_hour12: {fileID: 21300000, guid: a9ec9cac082f2424eb273c68852b2337, type: 3}
-  timer: 15
 --- !u!212 &6561016181186796297
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,3 +85,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7104536923907377202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6561016181186796310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac3f81ee1d7e5b4fabc26eb784ca80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moon_0: {fileID: 21300000, guid: 6fdba47f0a553ed428ad86013d121d34, type: 3}
+  moon_1: {fileID: 21300000, guid: 8cd962c0d3fae764da60f06b47d29bb1, type: 3}
+  moon_2: {fileID: 21300000, guid: dee955d6dbb164f459173e784b3b0637, type: 3}
+  moon_3: {fileID: 21300000, guid: 368a5a7e27c3c7a4a87359b4c74bf9c8, type: 3}
+  moon_4: {fileID: 21300000, guid: 5fc75aee5b05e4243b131a97b86b39e0, type: 3}
+  moon_6: {fileID: 21300000, guid: f71f7da625e51b0488c4fe46e3e5f196, type: 3}
+  moon_7: {fileID: 21300000, guid: 60598b7c88d3bf04787dc190ee1a0ef9, type: 3}
+  moon_8: {fileID: 21300000, guid: 65b5c4450f3fd5b4889cc95cc9e1d826, type: 3}
+  moon_hour1: {fileID: 21300000, guid: dde5d751f37b1ee47a986d17d4e08611, type: 3}
+  moon_hour2: {fileID: 21300000, guid: a3661db3e078a524ca6293970686bdca, type: 3}
+  moon_hour3: {fileID: 21300000, guid: d7432bb2c20f3ca4c8743cfc0019000e, type: 3}
+  moon_hour4: {fileID: 21300000, guid: c3860dee53cf481468e1f91c3b22bbef, type: 3}
+  moon_hour5: {fileID: 21300000, guid: 38c4f06370de7cb4486f4c16864086b8, type: 3}
+  moon_hour6: {fileID: 21300000, guid: 225e000b548a1d54a91e151a0222f628, type: 3}
+  moon_hour7: {fileID: 21300000, guid: c1ed19a4a3c24874f81ba7a4beff94f6, type: 3}
+  moon_hour8: {fileID: 21300000, guid: 38dc323adb3ab394c87f7f0327be4e53, type: 3}
+  moon_hour9: {fileID: 21300000, guid: ba7be98862a949542b5961181d7a6e28, type: 3}
+  moon_hour10: {fileID: 21300000, guid: 3e17d31c27b22c2428fcde015d9b7c91, type: 3}
+  moon_hour11: {fileID: 21300000, guid: e77602163161da24093aafe6562bec60, type: 3}
+  moon_hour12: {fileID: 21300000, guid: a9ec9cac082f2424eb273c68852b2337, type: 3}
+  timer: 100
