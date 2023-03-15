@@ -31,7 +31,7 @@ public class PlayerCommand : MonoBehaviour
         score = PlayerPrefs.GetInt("score",0);
         PlayerPrefs.Save();
         
-        PlayerPrefs.SetInt("score", score);
+        //PlayerPrefs.SetInt("score", score);
 
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -138,14 +138,28 @@ public class PlayerCommand : MonoBehaviour
     private void checkCommandStatus()
     {
 
+        Debug.Log("Current coffee index is: " + coffeeIndex);
         if (currentCoffee != null && currentCoffee.Equals(commandClient.getCoffee(coffeeIndex)))
         {
             coffeeCompleted();
             if (commandClient.getCoffeesCount() > coffeeIndex + 1)
             {
                 coffeeIndex++;
+
+                //show next coffee
             }
-            else commandIsComplete = true;
+            else {
+                commandIsComplete = true;
+
+                // from win con
+
+                client.IsHappy(false);
+                incrementScore();
+                moon_Animator.reduceTimer(15);
+                SceneManager.LoadScene("Win_scene");
+
+                // end
+            }
         }
 
     }
@@ -184,6 +198,7 @@ public class PlayerCommand : MonoBehaviour
 
     public void incrementScore(){
         score++;
+        PlayerPrefs.SetInt("score", score);
     }
 
     private void checkWinCondition()
