@@ -61,46 +61,9 @@ public class Command
 
     public Coffee getCoffee(int index)
     {
-        Debug.Log(index);
+        Debug.Log("index: " + index + ", coffees in command: " + coffees.Count);
         return (Coffee)coffees[index];
     }
-
-    //Desuet
-    /*
-    public void addCoffee()
-    {
-        coffees.Add(new Coffee());
-    }
-    
-    public void addSugar(int i)
-    {
-        ((Coffee)coffees[i]).addSugar();
-    }
-
-    public void addCream(int i)
-    {
-        ((Coffee)coffees[i]).addCream();
-    }
-
-    public void addAlcohol(int i)
-    {
-    public void addEspresso(int i)
-    {
-        ((Coffee)coffees[i]).addEspresso();
-    }
-
-    public void addPunched(int i)
-    {
-        ((Coffee)coffees[i]).addPunched();
-    }
-
-    public void addIced(int i)
-    {
-        ((Coffee)coffees[i]).addIced();
-    }
-        ((Coffee)coffees[i]).addAlcohol();
-    }
-    */
 
 }
 
