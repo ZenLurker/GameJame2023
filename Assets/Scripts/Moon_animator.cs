@@ -27,13 +27,17 @@ public class Moon_animator : MonoBehaviour
     [SerializeField] Sprite moon_hour11;
     [SerializeField] Sprite moon_hour12;
 
-    public float timer = 15f;
-    private float originalTimer;
+    [SerializeField] Sprite[] moons;
+    private int currentMoon = 0;
+
+    public float timer;
+    private float originalTimer = 30f;
     // Start is called before the first frame update
     void Start()
     {
         spriterenderer = GetComponent<SpriteRenderer>();
-        originalTimer = timer;
+        loadNextMoon();
+        timer = originalTimer/21;
 
     }
 
@@ -41,68 +45,21 @@ public class Moon_animator : MonoBehaviour
     void Update()
     {
         UpdateTimer();
-        if(timer >= originalTimer * 20/21){
-            spriterenderer.sprite = moon_0;
+
+        if(timer < 0) {
+            timer = originalTimer/21;
+            currentMoon++;
+            loadNextMoon();
         }
-        else if(timer>=originalTimer *19/21){
-            spriterenderer.sprite = moon_1;
-        }
-        else if(timer>=originalTimer *18/21){
-            spriterenderer.sprite = moon_2;
-        }
-        else if(timer>=originalTimer *17/21){
-            spriterenderer.sprite = moon_3;
-        }
-        else if(timer>=originalTimer *16/21){
-            spriterenderer.sprite = moon_4;
-        }
-        else if(timer>=originalTimer *15/21){
-            spriterenderer.sprite = moon_6;
-        }
-        else if(timer>=originalTimer *14/21){
-            spriterenderer.sprite = moon_7;
-        }
-        else if(timer>=originalTimer *13/21){
-            spriterenderer.sprite = moon_8;
-        }
-        else if(timer>=originalTimer *12/21){
-            spriterenderer.sprite = moon_hour12;
-        }
-        else if(timer>=originalTimer *11/21){
-            spriterenderer.sprite = moon_hour1;
-        }
-        else if(timer>=originalTimer *10/21){
-            spriterenderer.sprite = moon_hour2;
-        }
-        else if(timer>=originalTimer *9/21){
-            spriterenderer.sprite = moon_hour3;
-        }
-        else if(timer>=originalTimer *8/21){
-            spriterenderer.sprite = moon_hour4;
-        }
-        else if(timer>=originalTimer *7/21){
-            spriterenderer.sprite = moon_hour5;
-        }
-        else if(timer>=originalTimer *6/21){
-            spriterenderer.sprite = moon_hour6;
-        }
-        else if(timer>=originalTimer *5/21){
-            spriterenderer.sprite = moon_hour7;
-        }
-        else if(timer>=originalTimer *4/21){
-            spriterenderer.sprite = moon_hour8;
-        }
-        else if(timer>=originalTimer *3/21){
-            spriterenderer.sprite = moon_hour9;
-        }
-        else if(timer>=originalTimer *2/21){
-            spriterenderer.sprite = moon_hour10;
-        }
-        else if(timer>=originalTimer *1/21){
-            spriterenderer.sprite = moon_hour11;
-        }
-        else{
-            spriterenderer.sprite = moon_hour12;
+
+
+    }
+
+    private void loadNextMoon() {
+        if(currentMoon < moons.Length) {
+            spriterenderer.sprite = moons[currentMoon];
+        } else {
+            originalTimer = 0;
         }
     }
 
@@ -113,11 +70,11 @@ public class Moon_animator : MonoBehaviour
 
     public float getTimer()
     {
-        return timer;
+        return originalTimer;
     }
 
     public void reduceTimer(float reduceAmount)
     {
-        timer -= reduceAmount;
+        originalTimer -= reduceAmount;
     }
 }

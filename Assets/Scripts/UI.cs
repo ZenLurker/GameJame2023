@@ -25,7 +25,6 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        command = client.getCommand();
         gameMessage.text = "Go see the client!";
 
     }
@@ -43,24 +42,39 @@ public class UI : MonoBehaviour
 
         if (!(player.getIsCommandCompleted()))
         {
-            coffeeCount.text = "Coffees: " + command.getCoffeesCount().ToString();
-        }
+            if(player.getHasCommand()) {
+                coffeeCount.text = "Coffees: " + (player.getCurrentCoffee()+1) + " of " + command.getCoffeesCount().ToString();
+                sugarCount.text = "Sugars: " + command.getCoffee(player.getCurrentCoffee()).getSugars();
+                creamCount.text = "Creams: " + command.getCoffee(player.getCurrentCoffee()).getCreams();
+                icedCount.text = "Iced: " + command.getCoffee(player.getCurrentCoffee()).getIced();
+                punchedCount.text = "Punched: " + command.getCoffee(player.getCurrentCoffee()).getPunched();
+                energyShotsCount.text = "Energy Level: " + command.getCoffee(player.getCurrentCoffee()).getEspresso();
+                alcoholCount.text = "Alcohol: " + command.getCoffee(player.getCurrentCoffee()).getAlcohol();
+            }
+            
+        }    
         else
         {
             coffeeCount.text = "Command is complete!";
             gameMessage.text = "Return to client!";
+
+            sugarCount.text = "Sugars";
+            creamCount.text = "Creams";
+            icedCount.text = "Iced";
+            punchedCount.text = "Punched";
+            energyShotsCount.text = "Energy Level";
+            alcoholCount.text = "Alcohol";
+            
         }
 
-        sugarCount.text = "Sugars: " + command.getCoffee(player.getCurrentCoffee()).getSugars();
-        creamCount.text = "Creams: " + command.getCoffee(player.getCurrentCoffee()).getCreams();
-        icedCount.text = "Iced: " + command.getCoffee(player.getCurrentCoffee()).getIced();
-        punchedCount.text = "Punched: " + command.getCoffee(player.getCurrentCoffee()).getPunched();
-        energyShotsCount.text = "Energy Level: " + command.getCoffee(player.getCurrentCoffee()).getEspresso();
-        alcoholCount.text = "Alcohol: " + command.getCoffee(player.getCurrentCoffee()).getAlcohol();
         scoreCount.text = player.getScore().ToString();
 
 
     }
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }     
 
 
 

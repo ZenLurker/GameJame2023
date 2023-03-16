@@ -61,7 +61,7 @@ public class Command
 
     public Coffee getCoffee(int index)
     {
-        Debug.Log("index: " + index + ", coffees in command: " + coffees.Count);
+        
         return (Coffee)coffees[index];
     }
 
