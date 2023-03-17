@@ -11,7 +11,6 @@ public class PlayerCommand : MonoBehaviour
 
     [SerializeField] ClientLogic client;
     [SerializeField] Moon_animator moon_Animator;
-    [SerializeField] UI ui;
     AudioSource priseDeCommande;
    
 
@@ -31,7 +30,9 @@ public class PlayerCommand : MonoBehaviour
         
         score = PlayerPrefs.GetInt("score",0);
         PlayerPrefs.Save();
-    
+        
+        //PlayerPrefs.SetInt("score", score);
+
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -44,6 +45,7 @@ public class PlayerCommand : MonoBehaviour
         {
             checkCommandStatus();
             
+            commandClient.printCommand();
         }
 
         checkWinCondition();
@@ -55,8 +57,8 @@ public class PlayerCommand : MonoBehaviour
 
         if (other.gameObject.CompareTag("Client") && !hasCommand)
         {
+            Debug.Log("Command acquired");
             commandClient = client.getCommand(score);
-            ui.setCommand(commandClient);
             hasCommand = true;
 
         }
@@ -66,6 +68,11 @@ public class PlayerCommand : MonoBehaviour
             client.IsHappy(true);
             hasCommand = false;
 
+        }
+
+        if (other.gameObject.CompareTag("Client") && !commandIsComplete && hasCommand)
+        {
+            client.IsHappy(false);
         }
 
         if (other.gameObject.CompareTag("CoffeeStation") && hasCommand && !commandIsComplete)
@@ -132,7 +139,6 @@ public class PlayerCommand : MonoBehaviour
     {
 
         Debug.Log("Current coffee index is: " + coffeeIndex);
-        Debug.Log("Coffees in command is: " + commandClient.getCoffeesCount());
         if (currentCoffee != null && currentCoffee.Equals(commandClient.getCoffee(coffeeIndex)))
         {
             coffeeCompleted();
@@ -140,11 +146,19 @@ public class PlayerCommand : MonoBehaviour
             {
                 coffeeIndex++;
 
+                //show next coffee
             }
             else {
                 commandIsComplete = true;
-                coffeeIndex = 0;
-               
+
+                // from win con
+
+                client.IsHappy(false);
+                incrementScore();
+                moon_Animator.reduceTimer(15);
+                SceneManager.LoadScene("Win_scene");
+
+                // end
             }
         }
 
@@ -194,8 +208,6 @@ public class PlayerCommand : MonoBehaviour
             client.IsHappy(false);
             incrementScore();
             moon_Animator.reduceTimer(15);
-            //set command a null
-            commandClient = null;
             SceneManager.LoadScene("Win_scene");
         }
     }
@@ -204,8 +216,6 @@ public class PlayerCommand : MonoBehaviour
     {
         if(moon_Animator.getTimer() <= 0)
         {
-            //set command a null
-            commandClient = null;
             SceneManager.LoadScene("Death_scenne");
         }
     }
