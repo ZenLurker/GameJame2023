@@ -22,7 +22,12 @@ public class ClientLogic: MonoBehaviour
         command.printCommand();
     }
 
-    
+    // Update is called once per frame
+    void Update()
+    {
+        //command_level = player.getScore();
+    }
+
     public Command getCommand() {
         return command;
     }
